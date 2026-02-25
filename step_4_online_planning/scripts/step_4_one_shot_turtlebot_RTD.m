@@ -19,17 +19,19 @@ obstacle_buffer = 0.05 ; % m
 
 %% automated from here
 % load FRS based on initial speed
-disp('Loading FRS...')
-if v_0 >= 1.0 && v_0 <= 1.5
-    FRS = load('turtlebot_FRS_deg_10_v_0_1.0_to_1.5.mat') ;
-elseif v_0 >= 0.5
-    FRS = load('turtlebot_FRS_deg_10_v_0_0.5_to_1.0.mat') ;
-elseif v_0 >= 0.0
-    FRS = load('turtlebot_FRS_deg_10_v_0_0.0_to_0.5.mat') ;
-else
-    error('Please pick an initial speed between 0.0 and 1.5 m/s')
-end
+% disp('Loading FRS...')
+% if v_0 >= 1.0 && v_0 <= 1.5
+%     FRS = load('turtlebot_FRS_deg_10_v_0_1.0_to_1.5.mat') ;
+% elseif v_0 >= 0.5
+%     FRS = load('turtlebot_FRS_deg_10_v_0_0.5_to_1.0.mat') ;
+% elseif v_0 >= 0.0
+%     FRS = load('turtlebot_FRS_deg_10_v_0_0.0_to_0.5.mat') ;
+% else
+%     error('Please pick an initial speed between 0.0 and 1.5 m/s')
+% end
 
+% FRS = load('turtlebot_FRS_deg_10_v_0_0.5_to_1.0_noerror.mat') ;
+FRS = load('turtlebot_FRS_deg_10_v_0_0.5_to_1.0.mat') ;
 % create turtlebot
 A = turtlebot_agent ;
 A.reset([0;0;0;v_0])
